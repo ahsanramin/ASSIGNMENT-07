@@ -1,15 +1,24 @@
-import { PhoneCall, MessageCircle, Video } from 'lucide-react';
+import { useState } from 'react';
+import { useTimelineStore } from '../store/timelineStore';
+import TimelineEntry from '../components/TimelineEntry';
 
-export default function TimelineEntry({ entry }) {
-  const Icon = entry.type === 'call' ? PhoneCall : entry.type === 'text' ? MessageCircle : Video;
+export default function Timeline() {
+  const { entries } = useTimelineStore();
+  const [filter, setFilter] = useState('all');
+
+  const filtered = filter === 'all' ? entries : entries.filter(e => e.type === filter);
+
   return (
-    <div className="bg-white rounded-2xl p-5 flex items-center gap-4 shadow-sm">
-      <div className="w-10 h-10 bg-gray-100 rounded-2xl flex items-center justify-center">
-        <Icon size={24} className="text-emerald-700" />
-      </div>
-      <div className="flex-1">
-        <p className="font-medium">{entry.title}</p>
-        <p className="text-sm text-gray-500">{new Date(entry.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <h1 className="text-4xl font-bold mb-8">Timeline</h1>
+      <select value={filter} onChange={(e) => setFilter(e.target.value)} className="mb-8 w-full max-w-xs bg-white border border-gray-200 rounded-2xl py-4 px-6 text-gray-700 focus:outline-none">
+        <option value="all">Filter timeline</option>
+        <option value="call">Call</option>
+        <option value="text">Text</option>
+        <option value="video">Video</option>
+      </select>
+      <div className="space-y-4">
+        {filtered.map(entry => <TimelineEntry key={entry.id} entry={entry} />)}
       </div>
     </div>
   );
