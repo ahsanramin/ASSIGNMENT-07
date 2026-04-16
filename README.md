@@ -1,16 +1,33 @@
-# React + Vite
+# KeeNKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Keep Your Friendships Alive**
 
-Currently, two official plugins are available:
+KeeNKeeper is a personal relationship manager that helps you stay connected with the people who matter most. Track your last contact, set connection goals, and log interactions—all in a clean, responsive interface inspired by Figma designs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## 🌟 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Friend Dashboard** – View all your friends in a responsive grid with profile pictures, contact status, and days since last contact.
+- **Dynamic Friend Details** – Click any friend to see detailed stats, relationship goals, and a "Quick Check-In" that logs calls, texts, or video chats.
+- **Timeline with Filtering** – Browse a full history of interactions and filter by type (Call, Text, Video, Meetup) to review past communication.
+- **Friendship Analytics** – Visualize interaction patterns with a pie chart powered by Recharts.
+- **Persistent Storage** – All timeline data is saved to your browser's `localStorage` so you never lose your history.
+- **Fully Responsive** – Works seamlessly on mobile, tablet, and desktop devices.
+- **404 Page** – Friendly error page for unknown routes.
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** – UI library
+- **React Router DOM** – Client-side routing
+- **Context API + useReducer** – Global state management for timeline
+- **Tailwind CSS** – Utility-first styling
+- **Recharts** – Data visualization (pie chart)
+- **React Toastify** – Toast notifications
+- **React Icons** – Icon library
+- **Vite** – Build tool and development server
+- **LocalStorage** – Client-side data persistence
+
+## 🚀 Live Demo
+
+[Live Link]https://assignment-07-puce.vercel.app/
+
